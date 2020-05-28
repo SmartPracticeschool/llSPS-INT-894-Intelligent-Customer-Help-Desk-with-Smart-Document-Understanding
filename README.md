@@ -25,3 +25,6 @@ This flow basically summarizes the project. It begins with :
 2. Dialog in this interaction is coordinated by Watson Assistant.
 3. If the customer asks a technical question, it will be passed to Cloud Functions action.
 4. This action will further pass onto to Watson Discovery and return with appropriate solution.
+
+**Project demonstration video link**: 
+**UI Link for project**: https://node-red-obdyb.eu-gb.mybluemix.net/ui/#!/0?socketid=_5ae1-FL9eK88QLLAAAF
