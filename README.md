@@ -1,11 +1,10 @@
 # llSPS-INT-894-Intelligent-Customer-Help-Desk-with-Smart-Document-Understanding
-# Intelligent Customer Help Desk with Smart Document Understanding
+
 ### Project Description
 A customer care chatbot can answer simple questions, such as store locations and hours, directions, and maybe even making appointments.
 In this project, the queries will be handled in a better way. If the customer's question is about the operation of a device,the application
-shall pass the question onto Watson Discovery Service and we can handle the queries in a better way.
-We will build a chatbot that uses various Watson AI Services like Watson Discovery, Watson Assistant, Watson Cloud functions and Node-Red
-and deliver an effective user friendly Web User Interface 
+shall pass the question onto Watson Discovery Serviceand we can handle the queries in a better way.
+We will build a chatbot that uses various Watson AI Services like **Watson Discovery, Watson Assistant, Watson Cloud functions and Node-Red** and deliver an effective user friendly Web User Interface 
 
 The repository contains the Node-Red flow of the chatbot developed using various IBM Watson Services for backend and Node-Red for front end
 of the UI.
