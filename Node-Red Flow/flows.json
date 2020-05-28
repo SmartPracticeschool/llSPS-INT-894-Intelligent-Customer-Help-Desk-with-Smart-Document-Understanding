@@ -1,0 +1,178 @@
+[
+    {
+        "id": "c40bb888.eb34d8",
+        "type": "tab",
+        "label": "Customer Help Desk",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "51edf5aa.83120c",
+        "type": "debug",
+        "z": "c40bb888.eb34d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 780,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "93f16dfc.0495b",
+        "type": "function",
+        "z": "c40bb888.eb34d8",
+        "name": "",
+        "func": "msg.payload = \" \"+msg.payload.input\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "453b40fd.5ab6c",
+                "c8ebc71f.5855a8"
+            ]
+        ]
+    },
+    {
+        "id": "9a963555.0b4c98",
+        "type": "function",
+        "z": "c40bb888.eb34d8",
+        "name": "",
+        "func": "msg.payload.text=\"\";\nif(msg.payload.context.webhook_result_1)\n{\n    for(var i in msg.payload.context.webhook_result_1.results)\n    {\n        msg.payload.text = msg.payload.text+\"\\n\"+msg.payload.context.webhook_result_1.results[i].text;\n    }\n    msg.payload = msg.payload.text;\n}\nelse\nmsg.payload = msg.payload.output.text[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 760,
+        "y": 260,
+        "wires": [
+            [
+                "e29667cc.f23f08"
+            ]
+        ]
+    },
+    {
+        "id": "453b40fd.5ab6c",
+        "type": "ui_text",
+        "z": "c40bb888.eb34d8",
+        "group": "f9fe34ac.23efe8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Your query: ",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1fcad56.7369c2b",
+        "type": "ui_form",
+        "z": "c40bb888.eb34d8",
+        "name": "",
+        "label": "",
+        "group": "f9fe34ac.23efe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter your query",
+                "value": "input",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "input": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "93f16dfc.0495b"
+            ]
+        ]
+    },
+    {
+        "id": "c8ebc71f.5855a8",
+        "type": "watson-conversation-v1",
+        "z": "c40bb888.eb34d8",
+        "name": "",
+        "workspaceid": "b3831072-c77f-4b32-a112-f6ed96f655d7",
+        "multiuser": false,
+        "context": false,
+        "empty-payload": false,
+        "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/0d6e0bb1-9e8c-4cd4-b0e2-87b0981c50b9",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "51edf5aa.83120c",
+                "9a963555.0b4c98"
+            ]
+        ]
+    },
+    {
+        "id": "e29667cc.f23f08",
+        "type": "ui_template",
+        "z": "c40bb888.eb34d8",
+        "group": "eb8fe3b6.ab982",
+        "name": "ChatBot",
+        "order": 0,
+        "width": "20",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 900,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9fe34ac.23efe8",
+        "type": "ui_group",
+        "z": "",
+        "name": "CHATBOT: Ask me anything about our product",
+        "tab": "8797a074.5526c",
+        "order": 1,
+        "disp": true,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "eb8fe3b6.ab982",
+        "type": "ui_group",
+        "z": "",
+        "name": "CHATBOT's response",
+        "tab": "8797a074.5526c",
+        "order": 2,
+        "disp": true,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "8797a074.5526c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Customer Help Desk",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
