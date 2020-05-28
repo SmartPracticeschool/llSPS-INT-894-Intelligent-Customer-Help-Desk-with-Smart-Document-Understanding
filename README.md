@@ -27,4 +27,4 @@ This flow basically summarizes the project. It begins with :
 4. This action will further pass onto to Watson Discovery and return with appropriate solution.
 
 **Project demonstration video link**: 
-**UI Link for project**: https://node-red-obdyb.eu-gb.mybluemix.net/ui/#!/0?socketid=_5ae1-FL9eK88QLLAAAF
+**UI Link for project**: https://node-red-obdyb.eu-gb.mybluemix.net/ui
