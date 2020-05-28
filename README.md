@@ -20,7 +20,7 @@ Node-Red acts as a link between all the services utilized in this project and cr
 
 ### Working Flow
 This flow basically summarizes the project. It begins with :
-![alt text](https://github.com/bhanupsingh10/Innovacer-SDE-Intern/blob/master/Images/visitor_email_check-out.png)
+![alt text](https://github.com/SmartPracticeschool/llSPS-INT-894-Intelligent-Customer-Help-Desk-with-Smart-Document-Understanding/blob/master/Project%20Report/project-flow.png)
 1. The user interacts with Node-Red app UI.The chatbot engages the user in conversation.
 2. Dialog in this interaction is coordinated by Watson Assistant.
 3. If the customer asks a technical question, it will be passed to Cloud Functions action.
